@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="box">
+            <p class="classified">TOP SECRET</p>
+            <h1>Potato Registry</h1>
+            <p>DEPARTMENT OF SUS TUBERS </p>
+            <hr>
+            <div id="potato"><img src="Potato.png" alt="Potato"></div>
+            <h2 id="name">Sir Mashington III</h2>
+
+            <div class="info">
+                <p><span class="label">SUBJECT ID:</span><span id="id">0042</span></p>
+                <p><span class="label">OCCUPATION:</span><span id="job">Unemployed</span></p>
+                <p><span class="label">CRIMINAL RECORD:</span><span id="crime">Grand theft of a man</span></p>
+                <p><span class="label">STATUS:</span><span id="status">Probably hiding</span></p>
+                <p><span class="label">THREAT LEVEL:</span><span id="threat">Mildly concerning</span></p>
+            </div>
+            <button onclick="newPotato()">GENERATE POTATO </button>
+            <p id="message"></p>
+            <div class="footer"> 
+                OFFICIAL POTATO BUSINESS . EST . 1732 <br> ALL TUBERS ARE INNOCENT UNTIL MASHED.
+            </div>
+        </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Potato Registry</title>
+        <style>
+            body{
+                background: #191913;
+                color:#e8dfc5;
+                font-family: monospace;
+                text-align:center;
+                padding:16px;
+            }
+
+            .box{
+             width:100%;
+             min-height:calc(100vh - 32px);
+             box-sizing:border-box;
+             margin:0 auto;
+             padding:32px;
+             border:2px solid #d9b96e;
+             background:#26261e;
+             box-shadow:8px 8px 0 #0b0b08;
+            }
+
+            h1 {
+                color:magenta;
+                font-size:26px;
+       }
+
+       .classified{
+        color:#ff5555;
+        border:1px solid #ff5555;
+        display:inline-block;
+        padding:5px 10px;
+        transform:rotate (-4deg)
+       }
+
+       #potato{
+        margin:20px 0;
+           }
+
+           #potato img{
+        display:block;
+        width:100%;
+        max-width:480px;
+        height:auto;
+        margin:0 auto;
+        object-fit:contain;
+        transform-origin:center;
+        animation:wobble 2s infinite ease-in-out;
+       }
+
+       @keyframes wobble{
+        0%, 100% {transform: rotate(-5deg);}
+        50%{transform: rotate(5deg);}
+       }
+
+       .info{
+        text-align:left;
+        line-height:2;
+        border-top:1px dashed #77745d;
+        margin-top:20px;
+        padding-top:10px;
+       }
+
+       .label{
+        color:#d9b96e;
+       }
+
+       button{
+        background:#d9b96e;
+        color: #191913;
+        border:none;
+        padding:15px 20px;
+        font-family:monospace;
+        font-weight:bold;
+        cursor:pointer;
+        margin-top:20px;
+       }
+
+       button:hover{
+        background:#ff5555;
+        color:white;
+        transform: scale(1.05);    
+       }
+
+       .footer{
+        font-size:11px;
+        color:#888573;
+        margin-top:25px;
+       }
+
+        </style>
+
+        <script>
+            const names=[
+            "Greg The Menace",
+            "Sir Mashington III",
+            "Lord Tater Tot",
+            "Potatoe frypotatanum",
+            "Barbara",
+            "Kevin",
+            "Reddy Anna",
+            "Miss Spudnik",
+            "Forbiddenam Fry",
+            "Karen"
+            ];
+
+            const jobs=[
+             "Unlicensed Dentist",
+            "Professional ceilling inspector",
+            "Unemployed Unc",
+            "Tax accountant for duckies",
+            "Underground DJ",
+            "Professional Yapper+napper",
+            "CEO of absolutely NOTHING",
+            "Part-time french, full-time belgian",
+            "Governmentspy"
+           ];
+           
+           const crimes=[
+            "Stole 47 shopping carts",
+            "Tax evasion",
+            "Grand theft of a man",
+            "Illegal possession of 367 worms", 
+            "Arson(accidentally) ",
+            "Identity theft (stole someone's name tag)", 
+            "Disturbing the peace",
+            "War criminal force participant",
+            "Running a pyramid scheme which is a scam",
+            "Existing without a permit"
+           ];
+
+           const threats=[
+            "mildly concerning",
+            "absolutely diabolical", 
+            "prolly harmless",
+            "National emergency", 
+            "Suspiciously round",
+            "Unreasonably powerful", 
+            "Under investigation",
+            "An absolutemenace to society"
+          ];
+
+          const statuses=[
+          "probably hiding",
+          "At large",
+          "In prison of potatoe",
+          "Wanted in 180 nations",
+          "Under House arrest",
+          "Missing since Tuesday", 
+          "Refuses to cooperate",
+          "Last seen near an air fryer"
+         ];
+
+         let count=42;
+         function newPotato(){
+            count++;
+            document.getElementById("id").innerText=count;
+            document.getElementById("name").innerText=names[Math.floor(Math.random()*names.length)];
+
+            document.getElementById("job").innerText=jobs[Math.floor(Math.random()*jobs.length)];
+
+            document.getElementById("crime").innerText= crimes[Math.floor(Math.random()*crimes.length)];
+
+            document.getElementById("threat").innerText = threats[Math.floor(Math.random()*threats.length)];
+
+            document.getElementById("status").innerText = statuses[Math.floor(Math.random()*statuses.length)];
+
+            document.getElementById("message").innerText = "New SUSPECT ADDED to database.";
+
+            document.getElementById("potato").style.transform="rotate("+(Math.random()*40-20)+"deg)";
+            
+         }
+
+        </script>
+        </body>
+</html>
